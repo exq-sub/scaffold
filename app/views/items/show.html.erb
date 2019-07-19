@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @item.image %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @item.note %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @item.rate %>
+</p>
+
+<p>
+  <strong>Supportmoney:</strong>
+  <%= @item.supportmoney %>
+</p>
+
+<p>
+  <strong>People:</strong>
+  <%= @item.people %>
+</p>
+
+<p>
+  <strong>Days:</strong>
+  <%= @item.days %>
+</p>
+
+<p>
+  <strong>Targetamount:</strong>
+  <%= @item.targetamount %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %> >>
+<%= link_to 'プロジェクトを支援する', '#' %>
+
+<%= form_tag(action: :pay, method: :post) do %>
+  <script type="text/javascript"
+    src="https://checkout.pay.jp"
+    class="payjp-button"
+    data-key="pk_test_0383a1b8f91e8a6e3ea0e2a9">
+  </script>
+<% end %>
